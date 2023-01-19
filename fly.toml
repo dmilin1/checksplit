@@ -1,4 +1,4 @@
-# fly.toml file generated for checksplit on 2022-12-23T15:37:52-08:00
+# fly.toml file generated for checkSplit on 2022-11-20T02:35:13-08:00
 
 app = "checksplit"
 kill_signal = "SIGINT"

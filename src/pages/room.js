@@ -136,7 +136,9 @@ export default function Room() {
     <div style={{
       display: 'flex',
       flex: 1,
+      height: '100vh',
       maxHeight: '-webkit-fill-available',
+      width: '100vw',
       flexDirection: 'column',
       justifyContent: 'stretch',
       fontSize: 24,
@@ -254,6 +256,7 @@ export default function Room() {
                 <div style={{
                   display: 'flex',
                   flex: 1,
+                  flexFlow: 'wrap',
                   marginTop: 5,
                   gap: 10,
                 }}>
@@ -278,7 +281,15 @@ export default function Room() {
                         minWidth: 75,
                       }}
                     >
-                      {name}
+                      <div style={{
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        maxWidth: 200,
+                        textOverflow: 'ellipsis',
+                        textAlign: 'center',
+                      }}>
+                        {name}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -313,7 +324,7 @@ export default function Room() {
                 textAlign: 'center',
               }}
               type="number"
-              inputmode="numeric"
+              inputMode="numeric"
               value={selectedTip}
               onChange={(e) => setSelectedTip(Number(e.target.value.replaceAll(/[^0-9]/g, '').slice(0, 2)))}
             />
@@ -398,6 +409,7 @@ export default function Room() {
             </div>
             <div style={{
               flex: 1,
+              width: '50%'
             }}>
               <div style={{
                 backgroundColor: '#3a3a3a',
@@ -405,7 +417,13 @@ export default function Room() {
                 justifyContent: 'center',
                 padding: '3px 0',
               }}>
-                {selectedNickname}'s Total
+                <div style={{
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}>
+                  {selectedNickname}'s Total
+                </div>
               </div>
               <div style={{ padding: '0 10px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', margin: '3px 0' }}>
@@ -449,12 +467,19 @@ export default function Room() {
                   justifyContent: 'center',
                   margin: '10px 5px',
                   padding: 5,
-                  minWidth: 80,
-                  whiteSpace: 'nowrap',
                 }}
                 onClick={() => setSelectedNickname(name)}
               >
-                {name}
+                <div style={{
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  minWidth: 70,
+                  maxWidth: 120,
+                  textOverflow: 'ellipsis',
+                  textAlign: 'center',
+                }}>
+                  {name}
+                </div>
               </div>
             ))}
             <div

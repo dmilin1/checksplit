@@ -10,16 +10,17 @@ input {
     margin: 5px 0px;
 }
 
-button {
+.btn {
     font-size: 18px;
-    padding: 15px;
+    padding: 12px;
     background-color: #34b27b;
     border-width: 0;
     border-radius: 5px;
     color: #f9fdfb;
+    text-align: center;
 }
 
-button:active {
+.btn:active {
     background-color: #546A7B;
 }
 

@@ -258,7 +258,7 @@ export default function Room() {
                     <div>{item.description}</div>
                     <div>
                       $
-                      {item.total}
+                      {item.total.toFixed(2)}
                     </div>
                   </div>
                   <div style={{

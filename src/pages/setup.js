@@ -29,11 +29,18 @@ export default function Setup() {
         headers: { 'content-type': 'multipart/form-data' },
       })).data;
       setLoading(false);
-      const res = await axios.post('/api/createRoom', {
-        receipt,
-        venmoId,
-      });
-      navigate(`/room/${res.data.roomId}`);
+      // receipt is a base64 image. Render it to the body:
+      const img = document.createElement('img');
+      img.src = receipt;
+      img.style.height = '850px';
+      img.style.width = 'auto';
+      document.body.appendChild(img);
+      console.log(receipt);
+      // const res = await axios.post('/api/createRoom', {
+      //   receipt,
+      //   venmoId,
+      // });
+      // navigate(`/room/${res.data.roomId}`);
     }
   };
 
